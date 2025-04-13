@@ -1,24 +1,32 @@
-#python calculator
+#python area calculator
+import math
 while True:
-    operator = input("Choose the operator: ")
-    
-    if operator.lower() == 'q':
-        print("Exiting calculator. Goodbye!")
+    print("Which shape? \n1) Triangle\n2) Rectangle\n3) Square\n4) Circle\n5) Quit")
+    shape =int(input("Choose the shape(1 to 5): "))
+    #Rectangle
+    if shape == 1:
+        height =float(input("Enter the Height: "))
+        base =float(input("Enter the base: "))
+        area = (height * base) / 2
+        print(f"Triangle area:{area}")
+    #Reactangle
+    elif shape == 2:
+        length =float(input("Enter the Lenth: "))
+        width =float(input("Enter the width: "))
+        area = length * width
+        print(f"Rectangle area:{area}")
+    #Square 
+    elif shape == 3:
+        side =float(input("Enter side value: "))
+        area = side ** 2
+        print(f"{area} = Square area")
+    #Circle
+    elif shape == 4:
+        radius =float(input("Enter Radius: "))
+        area = math.pi * radius ** 2
+        print(f"{area} = Radius area")
+    elif shape == 5:
+        print("***Goodbye***")
         break
-
-    a = float(input("Enter first value: "))
-    b = float(input("Enter second value: "))
-
-    if operator == "+":
-        print(f"Result: {a + b}")
-    elif operator == "-":
-        print(f"Result: {a - b}")
-    elif operator == "*":
-        print(f"Result: {a * b}")
-    elif operator == "/":
-        if b != 0:
-            print(f"Result: {a / b}")
-        else:
-            print("Error: Division by zero!")
     else:
-        print(f"{operator} is an invalid operator.")
+        print(f"{shape} = Wrong shap you choosed")
