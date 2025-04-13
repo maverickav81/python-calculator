@@ -1,9 +1,24 @@
-#python calculator 
+#python calculator
 while True:
-    operator =input("choos the operator:")
-    a =float(input("Enter the first vlaue:"))
-    b =float(input("Enter the second value:"))
- if operator.lower()== "q":
-    break
+    operator = input("Choose the operator: ")
+    
+    if operator.lower() == 'q':
+        print("Exiting calculator. Goodbye!")
+        break
 
- 
+    a = float(input("Enter first value: "))
+    b = float(input("Enter second value: "))
+
+    if operator == "+":
+        print(f"Result: {a + b}")
+    elif operator == "-":
+        print(f"Result: {a - b}")
+    elif operator == "*":
+        print(f"Result: {a * b}")
+    elif operator == "/":
+        if b != 0:
+            print(f"Result: {a / b}")
+        else:
+            print("Error: Division by zero!")
+    else:
+        print(f"{operator} is an invalid operator.")
